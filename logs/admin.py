@@ -4,7 +4,7 @@ from .models import daily_log
 
 
 # Register your models here.
-@admin.site.register(daily_log)
+@admin.register(daily_log)
 class daily_LogAdmin(admin.ModelAdmin):
     list_display = ('student' , 'date')
     list_filter = ('date', 'student')

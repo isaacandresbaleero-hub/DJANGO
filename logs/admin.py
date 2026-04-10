@@ -8,4 +8,4 @@ from .models import daily_log
 class daily_LogAdmin(admin.ModelAdmin):
     list_display = ('student' , 'date')
     list_filter = ('date', 'student')
-    search_fields = ('student__username')
+    search_fields = ('student__username',)

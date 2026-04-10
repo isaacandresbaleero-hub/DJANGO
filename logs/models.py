@@ -7,7 +7,6 @@ class daily_log(models.Model):
     #link the log to user(student)
     student = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_current_user_id = True,
         on_delete=models.CASCADE,
         limit_choices_to={'role' : 'student'}
     )

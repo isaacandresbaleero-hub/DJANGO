@@ -10,3 +10,26 @@ class EvaluationsCriteria(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Evaluations(models.Model):
+    placement = models.ForeignKey(
+        InternshipPlacement,
+        on_delete=models.CASCADE
+    )
+
+    criteria = models.ForeignKey( 
+        EvaluationsCriteria,
+        on_delete=models.CASCADE
+    )
+
+#ratings out of 10
+    score = models.PositiveIntegerFiewld()
+    comments = models.TextField(blank=True, null=True)  
+    date_Evatuated = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Evaluation for {self.placement.students.username} - {self.criteria.name}: {self.score}"
+    
+
+

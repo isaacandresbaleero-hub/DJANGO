@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from .models import daily_log
+from .models import daily_log, WeeklyLog
 
 
 # Register your models here.
@@ -15,4 +15,3 @@ class WeeklyLogAdmin(admin.ModelAdmin):
     list_display = ('student' , 'week_number', 'submitted_at')
     list_filter = ('week_number',)
 
-    

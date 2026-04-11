@@ -26,7 +26,7 @@ class daily_log(models.Model):
     def __str__(self):
         return f" {self.student.username} - {self.date}"
     
-class weeklyLog(models.Model):
+class WeeklyLog(models.Model):
     student = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,

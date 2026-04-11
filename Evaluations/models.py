@@ -24,7 +24,7 @@ class Evaluations(models.Model):
     )
 
 #ratings out of 10
-    score = models.PositiveIntegerFiewld()
+    score = models.PositiveIntegerField()
     comments = models.TextField(blank=True, null=True)  
     date_Evatuated = models.DateTimeField(auto_now_add=True)
 

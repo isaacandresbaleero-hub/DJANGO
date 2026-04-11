@@ -5,7 +5,7 @@ from django.db import models
 
 # Create your models here.
 class CustomUser(AbstractUser):
-    Role_choicrs = (
+    Role_choices = (
         ('student', 'student'),
         ('Accademic_supervisor', 'Accademic_supervisor'),
         ('Workplace_supervisor', 'Workplace_supervisor'),

@@ -11,8 +11,3 @@ class daily_LogAdmin(admin.ModelAdmin):
     search_fields = ('student__username',)
 
 
-
-def save_model(self, request, obj, form, change):
-    if not change:  # Only set the student field when creating a new log
-        obj.student = request.user
-    super().save_model(request, obj, form, change)  

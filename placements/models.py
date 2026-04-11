@@ -7,7 +7,7 @@ class internship_placement(models.Model):
     students = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASADE,
-        limit_choices_to= {'role': 'student'}
+        limit_choices_to= {'role': 'student'},
         related_name= 'placement'
     )
 

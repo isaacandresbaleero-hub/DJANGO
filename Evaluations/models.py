@@ -1,10 +1,10 @@
 from django.db import models
-from django.conf import UserSettingsHolders
+from django.conf import settings 
 from placements.models import InternshipPlacement
 
 
 class EvaluationsCriteria(models.Model):
-    name = Models.Charfield(max_length=100)
+    name = models.CharField(max_length=100)
     description = models.TextField(blank = True)
 
 

@@ -10,4 +10,9 @@ class daily_LogAdmin(admin.ModelAdmin):
     list_filter = ('date', 'student')
     search_fields = ('student__username',)
 
+@admin.register(WeeklyLog)
+class WeeklyLogAdmin(admin.ModelAdmin):
+    list_display = ('student' , 'week_number', 'submitted_at')
+    list_filter = ('week_number',)
 
+    

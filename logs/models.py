@@ -26,6 +26,21 @@ class daily_log(models.Model):
     def __str__(self):
         return f" {self.student.username} - {self.date}"
     
+class weeklyLog(models.Model):
+    student = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
+    week_number = models.PositiveBigIntegerField()
+    summery = models.TextField()
+    supervisor_comments = models.TextField(blank=True, null=True)
+    submitted_at = models.DateTimeField(auto_now_add = True)
+
+    def __str__(self):
+        return f" {self.week_number} - week {self.student.username}"    
+
+
+    
 
 
 

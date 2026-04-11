@@ -3,7 +3,7 @@ from django.conf import settings
 
 
 # Create your models here.
-class internship_placement(models.Model):
+class InternshipPlacement(models.Model):
     students = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,

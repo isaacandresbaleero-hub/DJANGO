@@ -6,7 +6,7 @@ from django.conf import settings
 class internship_placement(models.Model):
     students = models.OneToOneField(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASADE,
+        on_delete=models.CASCADE,
         limit_choices_to= {'role': 'student'},
         related_name= 'placement'
     )

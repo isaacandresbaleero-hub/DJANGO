@@ -25,5 +25,7 @@ class daily_log(models.Model):
 
     def __str__(self):
         return f" {self.student.username} - {self.date}"
+    
+
 
 

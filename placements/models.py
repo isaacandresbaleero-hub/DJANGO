@@ -9,12 +9,20 @@ class InternshipPlacement(models.Model):
         limit_choices_to={'role': 'student'},
         related_name='placement'
     )
+
+    # orgaanization details
     organization_name = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
+
+    # superviser details
     supervisor_name = models.CharField(max_length=255)
     supervisor_contact = models.CharField(max_length=255)
+
+    #duration
     start_date = models.DateField()
     end_date = models.DateField()
+
+    #progress tracking
     is_active = models.BooleanField(default=True)
 
     def __str__(self):

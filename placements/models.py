@@ -4,7 +4,7 @@ from django.conf import settings
 
 # Create your models here.
 class InternshipPlacement(models.Model):
-    students = models.OneToOneField(
+    students = models.OneToOneField (
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         limit_choices_to= {'role': 'student'},
@@ -16,8 +16,8 @@ organization_name = models.CharField(max_length=255)
 location = models.CharField(max_length=255) 
 
 #work place supervisor details
-workplace_supervisor_name = models.CharField(max_length=255)    
-workplace_supervisor_contsct = models.CharField(max_length=255) 
+supervisor_name = models.CharField(max_length=255)    
+supervisor_contact = models.CharField(max_length=255) 
 
 #duration of the placement
 start_date = models.DateField()

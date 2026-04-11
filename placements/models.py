@@ -2,29 +2,20 @@ from django.db import models
 from django.conf import settings
 
 
-# Create your models here.
 class InternshipPlacement(models.Model):
-    students = models.OneToOneField (
+    students = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        limit_choices_to= {'role': 'student'},
-        related_name= 'placement'
+        limit_choices_to={'role': 'student'},
+        related_name='placement'
     )
+    organization_name = models.CharField(max_length=255)
+    location = models.CharField(max_length=255)
+    supervisor_name = models.CharField(max_length=255)
+    supervisor_contact = models.CharField(max_length=255)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    is_active = models.BooleanField(default=True)
 
-#company details 
-organization_name = models.CharField(max_length=255)
-location = models.CharField(max_length=255) 
-
-#work place supervisor details
-supervisor_name = models.CharField(max_length=255)    
-supervisor_contact = models.CharField(max_length=255) 
-
-#duration of the placement
-start_date = models.DateField()
-end_date = models.DateField()
-
-#status of the placement
-is_active = models.BooleanField(default=True)
-
-def __str__(self):
-    return f"{self.students.username} - {self.organization_name}"
+    def __str__(self):
+        return f"{self.students.username} - {self.organization_name}"
